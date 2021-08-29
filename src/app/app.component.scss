@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+$primary: #A61C3C;
+$secondary: #72bda3;
+$tertiary: #FADF63;
+$dark: #2a2b2a;
+$light: #1E91D6;
+h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background-color: $dark;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background-color: $dark;
+    bottom: -1px;
+    transform: translateX(-50px);
+}
+
+section {
+    padding: 10px 0;
+}
+
+// nav
+nav {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 30px;
+    // border-bottom: 1px solid #333;
+    background-color: $primary;
+}
+
+.navbar-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social-media a {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.fa-facebook,
+.fa-twitter {
+    color: #eee;
+    font-size: 18px;
+}
+
+nav .logo {
+    width: 12%;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.navbar-wrapper a {
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color .3s;
+    color: #eee;
+}
+
+.navbar-wrapper a:hover {
+    background-color: #eee;
+    color: #A61C3C;
+    background-size: cover;
+}
+
+.social-media button {
+    background-color: transparent;
+    border: none;
+}
+
+// End nav
+// Jumbotron
+.jumbotron {
+    background: $primary;
+    background-size: cover;
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+}
+
+.jumbotron img {
+    border-radius: 10px;
+}
+
+.jumbotron-img-wrapper {
+    height: 55vh;
+}
+
+.jumbotron img.img-main {
+    height: 65%;
+    object-fit: contain;
+    position: absolute;
+    bottom: 100px;
+    border-radius: 25px;
+    overflow: hidden;
+    right: 100px;
+    z-index: 10;
+    box-shadow: 0px 10px 10px rgba(100, 100, 111, .4);
+}
+
+.jumbotron img.img-background {
+    height: 65%;
+    object-fit: contain;
+    position: absolute;
+    bottom: 70px;
+    right: 75px;
+}
+
+.jumbotron-content-wrapper {
+    position: absolute;
+    left: 40px;
+    width: 50%;
+    padding: 20px;
+}
+
+.jumbotron-content-wrapper h1 {
+    color: #fff;
+    font-size: 55px;
+    line-height: 60px;
+    font-family: 'Big Shoulders Display', sans-serif;
+}
+
+.jumbotron-content-wrapper p {
+    color: #eee;
+    font-size: 35px;
+}
+
+.jumbotron-content-wrapper small {
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+form input {
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding-left: 20px;
+}
+
+form button {
+    width: 30%;
+    height: 50px;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button.more {
+    border: 1px solid $primary;
+    background-color: #f5f5f5;
+    color: $primary;
+    margin-right: 15px;
+}
+
+button.about {
+    border: none;
+    background: $tertiary;
+    color: $dark;
+}
+
+// End jumbotron
+// Information
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 65vh;
+    background-color: rgb(226, 226, 226);
+}
+
+.information-cards {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card {
+    background-color: #f5f5f5;
+    margin-right: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(100, 100, 111, .4);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card i {
+    font-size: 60px;
+    color: #eee;
+    padding: 20px;
+    border-radius: 27px;
+    background-color: $light;
+    border: 5px solid $dark;
+}
+
+.card h3 {
+    text-align: center;
+    padding-top: 25px;
+    text-transform: capitalize;
+}
+
+// End information
+// Latest news
+.latest-news {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.news-cards .card img {
+    height: 50%;
+}
+
+.news-cards {
+    width: 85%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.news-card {
+    width: 25%;
+    height: auto;
+    border: 1px solid rgba(100, 100, 111, .4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.news-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.card button {
+    background-color: #FADF63;
+    color: #222;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.card-body {
+    padding: 10px 15px;
+}
+
+.card-body button {
+    border: none;
+    height: 40px;
+    padding: 10px 40px;
+    background-color: $light;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+// End Latest news
+// Magic
+.magic {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    // background-color: rgb(226, 226, 226);
+}
+
+.magic-content {
+    background: linear-gradient( rgba(39, 39, 61, 0.3), rgba(39, 39, 61, 0.3)), url('../assets/images/letras-cariamanga.jpg') top -75px left 0 no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.magic-img {
+    width: 50%;
+    background-color: $primary;
+    padding: 20px;
+    position: absolute;
+    left: -100px;
+}
+
+.magic-img img {
+    width: 100%;
+}
+
+.magic-text {
+    width: 40%;
+    background-color: rgba(46, 46, 46, 0.4);
+    color: #fff;
+    padding: 30px;
+    align-self: flex-end;
+    position: absolute;
+    right: 20px;
+    bottom: 142px;
+}
+
+// End Magic
