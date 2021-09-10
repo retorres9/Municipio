@@ -4,6 +4,13 @@ $secondary: #72bda3;
 $tertiary: #FADF63;
 $dark: #2a2b2a;
 $light: #1E91D6;
+$white: #fff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h2 {
     font-size: 30px;
     text-transform: uppercase;
@@ -14,7 +21,7 @@ h2::before {
     content: '';
     position: absolute;
     width: 50px;
-    height: 1px;
+    height: 3px;
     background-color: $dark;
 }
 
@@ -22,7 +29,7 @@ h2::after {
     content: '';
     position: absolute;
     width: 50px;
-    height: 1px;
+    height: 3px;
     background-color: $dark;
     bottom: -1px;
     transform: translateX(-50px);
@@ -37,16 +44,16 @@ nav {
     display: flex;
     flex-direction: row;
     padding: 10px 30px;
-    // border-bottom: 1px solid #333;
-    background-color: $primary;
+    background-color: $white;
 }
 
 .navbar-wrapper {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
+    margin-right: 20px;
 }
 
 .social-media {
@@ -63,7 +70,7 @@ nav {
 
 .fa-facebook,
 .fa-twitter {
-    color: #eee;
+    color: $primary;
     font-size: 18px;
 }
 
@@ -77,15 +84,40 @@ nav .logo {
 
 .navbar-wrapper a {
     padding: 10px 30px;
-    border-radius: 5px;
+    position: relative;
     transition: background-color .3s;
-    color: #eee;
+    color: $dark;
+    overflow: hidden;
 }
 
 .navbar-wrapper a:hover {
     background-color: #eee;
     color: #A61C3C;
     background-size: cover;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    z-index: 100;
+    width: 0%;
+    height: 2px;
+    background-color: $primary;
+    transition: width .5s;
+    transform: translateX(-30px);
+}
+
+a:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    z-index: 100;
+    width: 100%;
+    height: 2px;
+    background-color: $primary;
+    transition: width .5s;
+    transform: translateX(-30px);
 }
 
 .social-media button {
@@ -96,7 +128,6 @@ nav .logo {
 // End nav
 // Jumbotron
 .jumbotron {
-    background: $primary;
     background-size: cover;
     width: 100%;
     height: 55vh;
@@ -104,6 +135,8 @@ nav .logo {
     position: relative;
     flex-direction: row;
     align-items: center;
+    background: linear-gradient(rgb(62 62 62 / 63%), rgb(62 62 62 / 63%)), url(../assets/images/cerro-ahuaca.jpg) top -200px left 0 no-repeat;
+    background-size: cover;
 }
 
 .jumbotron img {
@@ -114,31 +147,22 @@ nav .logo {
     height: 55vh;
 }
 
-.jumbotron img.img-main {
-    height: 65%;
-    object-fit: contain;
+img.img-main {
     position: absolute;
-    bottom: 100px;
-    border-radius: 25px;
-    overflow: hidden;
-    right: 100px;
-    z-index: 10;
-    box-shadow: 0px 10px 10px rgba(100, 100, 111, .4);
-}
-
-.jumbotron img.img-background {
-    height: 65%;
-    object-fit: contain;
-    position: absolute;
-    bottom: 70px;
-    right: 75px;
+    z-index: -3;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .jumbotron-content-wrapper {
     position: absolute;
     left: 40px;
     width: 50%;
+    z-index: 100;
     padding: 20px;
+    background-color: #a61c3c78;
 }
 
 .jumbotron-content-wrapper h1 {
@@ -219,11 +243,13 @@ button.about {
 .card {
     background-color: #f5f5f5;
     margin-right: 10px;
-    width: 20%;
+    width: 24%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     padding: 10px;
+    position: relative;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(100, 100, 111, .4);
@@ -234,12 +260,56 @@ button.about {
 }
 
 .card i {
+    margin-top: 20px;
     font-size: 60px;
     color: #eee;
     padding: 20px;
-    border-radius: 27px;
-    background-color: $light;
-    border: 5px solid $dark;
+    border-radius: 15px;
+    border: 3px solid $dark;
+}
+
+.card-events i {
+    background-color: #A61C3C;
+}
+
+.card-place i {
+    background-color: #e79908;
+}
+
+.card-formalities i {
+    background-color: yellowgreen;
+}
+
+.card-schedule i {
+    background-color: #1E91D6;
+}
+
+.card-place::before,
+.card-schedule::before,
+.card-formalities::before,
+.card-events::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    top: 0;
+    z-index: 100;
+}
+
+.card-place::before {
+    background-color: #e79908;
+}
+
+.card-schedule::before {
+    background-color: #1E91D6;
+}
+
+.card-formalities::before {
+    background-color: yellowgreen;
+}
+
+.card-events::before {
+    background-color: #A61C3C;
 }
 
 .card h3 {
