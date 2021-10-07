@@ -14,6 +14,8 @@ export class ListingFormalitiesComponent implements OnInit {
   }
   goToRoute() {
     let s = 123;
-    this.router.navigateByUrl(`tramites/view/${s}`);
+    console.log(s);
+
+    this.router.navigate(['tramites', 'view', s]);
   }
 }

@@ -19,6 +19,11 @@ const routes: Routes = [
         (m) => m.FormalitiesModule
       ),
   },
+  {
+    path: 'municipio',
+    loadChildren: () =>
+      import('./city-hall/city-hall.module').then((m) => m.CityHallModule),
+  },
 ];
 
 @NgModule({

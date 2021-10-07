@@ -4,12 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ViewFormalitiesComponent } from './view-formalities/view-formalities.component';
 import { ListingFormalitiesComponent } from './listing-formalities/listing-formalities.component';
-import { FormalitiesComponent } from './formalities.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: FormalitiesComponent,
     children: [
       {
         path: 'listing',
@@ -18,10 +16,14 @@ const routes: Routes = [
       {
         path: 'view/:id',
         component: ViewFormalitiesComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'listing'
       }
     ]
   }
-]
+];
 
 @NgModule({
   imports: [
