@@ -1,4 +1,53 @@
-.autoridades__alcalde_alcalde,
-.autoridades__alcalde_vicealcalde {
+.autoridades {
+    justify-content: space-evenly;
+}
+
+.autoridades__card {
     outline: 1px solid rgb(177, 177, 177);
+    width: 45%;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+}
+
+.autoridades__card {
+    display: flex;
+    flex-direction: row;
+}
+
+.autoridades__card_img {
+    width: 30%;
+}
+
+.autoridades__card_text {
+    width: 70%;
+    align-self: center;
+}
+
+.autoridades__card_img img {
+    object-fit: contain;
+    border-radius: 50%;
+    width: 70%;
+}
+
+.autoridades__card_img {
+    align-self: center;
+}
+
+.autoridades__card::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background-color: royalblue;
+    top: 0;
+    left: -250px;
+    transform: skewX(20deg);
+    transition: left .6s;
+    z-index: -50;
+}
+
+.autoridades__card:hover::before {
+    left: -50px;
 }

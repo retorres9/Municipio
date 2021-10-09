@@ -33,6 +33,10 @@ nav {
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+}
+
 .fa-facebook,
 .fa-twitter {
     color: $primary;
